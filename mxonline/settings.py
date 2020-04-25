@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'apps.users.apps.UsersConfig',
     'apps.courses.apps.CoursesConfig',
     'apps.organizations.apps.OrganizationsConfig',
-    'apps.operations.apps.OperationConfig' 
+    'apps.operations.apps.OperationConfig'
 ]
 
 MIDDLEWARE = [
