@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.operations.apps.OperationConfig',
     'crispy_forms',
     'xadmin.apps.XAdminConfig',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,13 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 云片网相关设置
+yunpian_apikey = "xxxxxx"
+
+# redis相关配置
+REDIS_HOST = "127.0.0.1"
+REDIS_PORT = 6379
+
+
+

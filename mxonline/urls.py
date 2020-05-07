@@ -15,16 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
 
 import xadmin
 
-from apps.users.views import LoginView
+from apps.users.views import LoginView, SendSmsView, DynamicLoginView
 
 urlpatterns = [
+    url(r'^captcha/', include('captcha.urls')),
     # path('admin/', admin.site.urls),
     # 添加xadmin
     path('xadmin/', xadmin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('login/', LoginView.as_view(), name='login'),
+    path('d_login/', DynamicLoginView.as_view(), name='d_login'),
+    path('send_sms/', csrf_exempt(SendSmsView.as_view()), name='send_sms'),
 ]
